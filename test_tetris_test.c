@@ -6,7 +6,7 @@
 
 int sleepf(int n[20]) //落下してくるの書く（したの位置の数が0である時、一列落下する（0.5秒ぐらい）,落下したくない行（限界の位置）にはあらかじめ2を入れておくことで防ぐ）
 {
-    int fornum; //testetst
+    int fornum;
     int jnum;
     int testnum = 1;
     for(fornum = 1; fornum < 21; fornum++)
