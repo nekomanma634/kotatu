@@ -6,7 +6,7 @@
 
 int sleepf(int n[20]) //落下してくるの書く（したの位置の数が0である時、一列落下する（0.5秒ぐらい）,落下したくない行（限界の位置）にはあらかじめ2を入れておくことで防ぐ）
 {
-    int fornum;
+    int fornum; //testetst
     int jnum;
     int testnum = 1;
     for(fornum = 1; fornum < 21; fornum++)
@@ -29,7 +29,7 @@ int blocf(void)
     int n; //横
     int fn; //縦
     int a = 0; //横一列そろったときの計算に使うやつ
-    int i = 1; // a + b , a + c...
+    int i = 1; // a + b , b + c...
     int i2; //for用
     int i3 = 0; //横一列判定用
 
