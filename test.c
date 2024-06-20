@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <unistd.h>
 
 struct judgedate //テスト構造体
 {
@@ -78,7 +77,7 @@ int main()
                     {0,0,0,0,0}, //6
                     {0,0,0,0,0}, //7
                     {0,0,0,0,0}, //8
-                    {0,0,0,0,0}, //9
+                    {1,1,1,1,0}, //9
                     {1,1,1,1,0}, //10
                     }; //ゲームのブロック配列
 
@@ -126,15 +125,11 @@ int main()
                     {
                         n4 = 0; //横の行のforに使う変数
                         n2++;
+                        judgenum[0] = 0;
 
                         for(n4 = 0; n4 < 5; n4++) //5は横の行
                         {
                             notjudge = false;
-
-                            if(num[n2][n4] == 1)
-                            {
-                                judgenum[0]++;
-                            }
 
                             if((num[n][n4] == 1) && (num[n2][n4] == 0)) //n回繰り返し、1が来たらやめる
                             {
@@ -142,9 +137,14 @@ int main()
                                 num[n2][n4]++;
                                 blocmove++;
                             }
+
+                            if(num[n][n4] == 1) //１である場合に判定の変数に＋１する
+                            {
+                                judgenum[0]++;
+                            }
                         }
 
-                        if(judgenum[0] == 5)
+                        if(judgenum[0] == 5) //nの横一列そろったら消す
                         {
                             for(n4 = 0; n4 < 5; n4++)
                             {
